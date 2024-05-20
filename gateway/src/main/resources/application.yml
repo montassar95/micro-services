@@ -1,0 +1,26 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8090
+spring:
+  application:
+    name: mineur-penal
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  datasource:
+    username: mineurinfo
+    password: mineurinfo
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@10.10.50.80:1521/mineur
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+
